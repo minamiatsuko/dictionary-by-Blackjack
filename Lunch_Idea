@@ -1,0 +1,39 @@
+import random
+
+class lunch():
+
+     def __init__(self, station, variety):
+         self.station = station
+         self.variety = variety
+     
+     def __repr__(self):
+         return f'{self.station} {self.variety}'
+
+class Plan():
+
+    def __init__(self):
+        stations = ['渋谷', '新宿', '上野', '銀座']
+        varieties = [ 
+              {'menu': 'お寿司', 'price': 1100}, 
+              {'menu': 'カレー', 'price': 800},
+              {'menu': 'ハンバーガー', 'price': 600},
+              {'menu': 'ラーメン', 'price': 700},
+              {'menu': 'タピオカ', 'price': 300},
+              {'menu': 'ケーキ', 'price': 500},
+              {'menu': 'ステーキ', 'price': 1500},
+              {'menu': 'たこ焼き', 'price': 500},
+          
+             
+          ]
+
+        self.lunchs =[]
+
+        for station in stations:
+            for variety in varieties:
+                self.lunchs.append(lunch(station, variety))   
+
+    def deal(self):
+        return self.lunchs.pop(4)
+
+    def shuffle(self):
+        random.shuffle(self.lunchs)       
